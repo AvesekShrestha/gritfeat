@@ -25,16 +25,16 @@ Built with semantic HTML and modern CSS animations for a polished user experienc
 ## Glimps of Landing page
 
 * Home Page
-![](./screenshots//home.png)
+![](./screenshots/home.png)
 
 * About Page 
-![](./screenshots//about.png)
+![](./screenshots/about.png)
 
 * Service Page
-![](./screenshots//services.png)
+![](./screenshots/services.png)
 
 * Contact Page 
-![](./screenshots//home.png)
+![](./screenshots/contact.png)
 
 * Footer 
 ![](./screenshots//footer.png)
