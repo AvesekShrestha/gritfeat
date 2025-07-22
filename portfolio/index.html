@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Dancing+Script:wght@400..700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Portfolio</title>
+</head>
+
+<style>
+    #nav-links li::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        left: 0;
+        bottom: -6px;
+        background-color: white;
+        height: 2px;
+        display: block;
+        transition: width 0.3s ease;
+    }
+
+    #nav-links li:hover::after {
+        width: 100%;
+    }
+
+    #nav-links li {
+        position: relative;
+    }
+</style>
+
+<body>
+    <nav style="background: linear-gradient(135deg, #3b0a45, #6a0572, #aa00ff);" class="shadow-md">
+        <div class="flex w-full h-[80px] justify-between items-center px-5">
+            <div>
+                <span id="logo" class="text-shadow-sm text-shadow-black text-[30px] cursor-pointer text-white"
+                    style="font-family: Dancing Script;">Avesek</span>
+            </div>
+            <input type="checkbox" id="menu-toggle" class="hidden md:hidden" />
+            <label for="menu-toggle" class="menu-icon block md:hidden cursor-pointer text-white text-3xl">
+                &#9776;
+            </label>
+            <div class="hidden md:block">
+                <ul class="flex flex-row gap-6" id="nav-links">
+                    <li class="cursor-pointer text-white"><a href="">Home</a></li>
+                    <li class="cursor-pointer text-white"><a href="">About</a></li>
+                    <li class="cursor-pointer text-white"><a href="">Project</a></li>
+                    <li class="cursor-pointer text-white"><a href="">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+</body>
+
+</html>
