@@ -3,41 +3,41 @@
 
 // Create variables of various types (string, number, boolean, object, undefined, null, symbol, BigInt).
 
-// const myStr = "This is string variable"
-// const myNumber = 3
-// const myBool = false
+const myStr = "This is string variable"
+const myNumber = 3
+const myBool = false
 
-// const myObject = {
-//     name: "Ram",
-//     age: 20,
-//     roll: 1
-// }
+const myObject = {
+    name: "Ram",
+    age: 20,
+    roll: 1
+}
 
-// let myUndefined
-// const myNull = null
-// const mySymbol = Symbol("GT")
-// const myBigInt = 23948723985732987432n
+let myUndefined
+const myNull = null
+const mySymbol = Symbol("GT")
+const myBigInt = 23948723985732987432n
 
 
-// console.log(typeof (myStr))
-// console.log(typeof (myNumber))
-// console.log(typeof (myBool))
-// console.log(typeof (myObject))
-// console.log(typeof (myUndefined))
-// console.log(typeof (myNull))
-// console.log(typeof (mySymbol))
-// console.log(typeof (myBigInt))
+console.log(typeof (myStr))
+console.log(typeof (myNumber))
+console.log(typeof (myBool))
+console.log(typeof (myObject))
+console.log(typeof (myUndefined))
+console.log(typeof (myNull))
+console.log(typeof (mySymbol))
+console.log(typeof (myBigInt))
 
 // Add a variable with a value of NaN and show how JavaScript handles it when combined with other data types.
 
-// const myNaN = NaN
+const myNaN = NaN
 
-// console.log("Hello" + myNaN)
-// console.log(1 + myNaN)
-// console.log(false + myNaN)
-// console.log(null + myNaN)
-// console.log(mySymbol + myNaN)
-// console.log(myObject + myNaN)
+console.log("Hello" + myNaN)
+console.log(1 + myNaN)
+console.log(false + myNaN)
+console.log(null + myNaN)
+console.log(mySymbol + myNaN)
+console.log(myObject + myNaN)
 
 // Perform type coercion on various combinations of variables (string + number, boolean + number, etc.) and observe the results.
 
