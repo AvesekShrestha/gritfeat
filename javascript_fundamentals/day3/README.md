@@ -310,7 +310,7 @@ dog.bark()
 dog.eat()
 ```
 
-** Using ES6**
+**Using ES6**
 
 ```
 class Animal{

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 p-8 font-sans text-gray-800">
+    <div class="flex justify-center items-start">
+        <div class="w-full max-w-4xl flex flex-col gap-10">
+
+            <!-- Profile Section -->
+            <h1 class="text-3xl font-bold text-center">👤 User Profile</h1>
+            <div id="user-info" class="bg-white p-6 rounded-lg shadow text-lg space-y-3">
+                Loading user info...
+            </div>
+
+            <!-- Albums Section -->
+            <h2 class="text-2xl font-semibold text-center">📸 Albums</h2>
+            <div id="albums" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <!-- Albums will be injected here -->
+            </div>
+
+            <!-- Todos Section -->
+            <h2 class="text-2xl font-semibold text-center">✅ Todos</h2>
+            <div id="todos" class="flex flex-col gap-3">
+                <!-- Todos will be injected here -->
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+<script src="profile.js"></script>
+
+</html>
