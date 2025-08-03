@@ -290,9 +290,7 @@
 // const adder = makeAdder(3);
 // const sum = adder(5);
 
-// console.log(sum)
-
-
+// console.log(sum) 
 
 
 
