@@ -1,9 +1,8 @@
-// Find if a duplicate exists in a list of numbers.
-// For eg:
-// const data = [1, 3, 5, 2, 4, 5];
-// Answer:  [5]
+# Question 1 
 
+**Solution**
 
+```
 const findDuplicate = (numbers: number[]): number[] => {
     let duplicate: number[] = []
     let set = new Set();
@@ -18,21 +17,18 @@ const findDuplicate = (numbers: number[]): number[] => {
 
 const duplicate: number[] = findDuplicate([1, 3, 5, 2, 4, 5]);
 console.log(duplicate)
+```
+
+**Time Complexity** 
+
+* Linear Time Complexity : O(n) -> for iterating over set
 
 
+# Question 2 
 
-// Check if any item from user roles exists in required roles.
+**Solution**
 
-// For eg: 
-// Find if user and editor roles are present in requiredRoles.(roles can be any of length)
-
-// const roles = ['admin', 'manager',  supervisor‘',  'editor', ‘viewer', ‘owner', ‘']
-// const userRoles = ['user', 'editor']
-// const requiredRoles = ['admin',  'editor']
-
-// Answer: true
-
-
+```
 const roleExists = (userRoles: string[], requiredRoles: string[]): boolean => {
     return userRoles.some(userRole => requiredRoles.includes(userRole))
 }
@@ -41,16 +37,14 @@ const userRoles = ['user', 'editor'];
 const requiredRoles = ['admin', 'editor'];
 
 console.log(roleExists(userRoles, requiredRoles))
+```
 
 
-// Find Common Elements Between Two Arrays
+# Question 3 
 
-// For eg:
-// const a1 =  [1,4,2,8,9]
-// const a2 = [7,5,0,4,1]
-// Answer: [1, 4]
+**Solution** 
 
-
+```
 
 const findCommonElement = (arr1: number[], arr2: number[]): number[] => {
 
@@ -65,21 +59,19 @@ const findCommonElement = (arr1: number[], arr2: number[]): number[] => {
 }
 const a1 = [1, 4, 2, 8, 9]
 const a2 = [7, 5, 0, 4, 1]
-
 console.log(findCommonElement(a1, a2))
+```
+
+**Time Complexity** 
+
+* Linear Time Complexity : O(n)
 
 
-// Filter items based on allowed keys
-// For eg:
-// const data = [
-//   { key: 'name', value: ‘John'},
-//   { key: 'email', value:'john@example.com' },
-//   { key: 'age', value: 20 },
-// ]
-// const allowedKeys = ['name', 'age']
-// Answer: [ { key: 'name', value: 'John' }, { key: 'age', value: 20 } ]
+# Question no 4 
 
+**Solution** 
 
+```
 interface Ivalue {
     key: string,
     value: string | number
@@ -98,17 +90,13 @@ const filterData = (data: Ivalue[], allowedKeys: string[]): Ivalue[] => {
 }
 
 console.log(filterData(data, allowedKeys))
+```
 
+# Question no 5 
 
-// Determine whether both keys and values  of two objects are equal 
-// For eg:
-// const d1= {name:'John', email:'john@example.com' ,  age: 20 }
-// const d2= {name:'John', email:'john@example.com' ,  age: 20 }
-// const d3= {name:'Jane', email:'jane@example.com' ,  age: 20 }
+**Solution**
 
-// Answer: sameObject(d1,d2) => true
-// Answer: sameObject(d1,d3) => false
-
+```
 interface Idata {
     name: string,
     email: string,
@@ -126,24 +114,18 @@ const sameObject = (obj1: Idata, obj2: Idata): boolean => {
 
 console.log(sameObject(d1, d2))
 console.log(sameObject(d1, d3))
+```
+
+**Time Complexity** 
+
+* Constant Time Complexity : O(1)
 
 
+# Question no 6
 
-// Group the related data by category 
-// const products = [
-//   { id: 1, name: 'Phone', categoryId: 2 },
-//   { id: 2, name: 'Shirt', categoryId: 1 },
-//   { id: 3, name: 'Charger', categoryId: 2 }
-// ]
-// Answer: 
-// {
-//   '1': [ { id: 2, name: 'Shirt', categoryId: 1 } ],
-//   '2': [
-//     { id: 1, name: 'Phone', categoryId: 2 },
-//     { id: 3, name: 'Charger', categoryId: 2 }
-//   ]
-// }
+**Solution**
 
+```
 interface Iproduct {
     id: number,
     name: string,
@@ -171,11 +153,17 @@ const groupProducts = (products: Iproduct[]): Record<string, Iproduct[]> => {
 }
 
 console.log(groupProducts(products))
+```
 
+**Time Complexity** 
 
+* Linear Time Complexity : O(n) -> traversal over products
 
-// Implement binary search algorithm. (If sorting is required, you should use one of the sorting algorithms: Selection, Insertion, Merge, Quick, Heap Sort)
+# Question no 7 
 
+**Solution** 
+
+```
 
 const mergeSort = (arr: number[]): number[] => {
     if (arr.length <= 1) return arr;
@@ -218,6 +206,32 @@ const binarySearch = (numbers: number[], target: number, front: number, rear: nu
 const numbers: number[] = [3, 2, 1, 4, 5]
 const index: number = binarySearch(mergeSort(numbers), 3, 0, numbers.length - 1)
 console.log(index)
+```
+
+**Time Complexity** 
+
+* Merge Sort : O(nlog(n))
+* Binary Search : O(log(n))
+* Total Time Complexity : O(nlog(n)) + O(log(n)) = O(nlog(n))
+
+# Binary Search Tree 
+
+A Binary Search Tree is a special kind of binary tree where:
+
+* Each node has at most two children: left and right.
+* For every node:
+
+    * All values in its left subtree are less than the node's value.
+    * All values in its right subtree are greater than the node's value.
+
+This property allows efficient searching, insertion, and deletion operations, generally running in O(log n) time.
+
+## Basic operations of BST:
+
+* Insert: Add a node keeping the BST property.
+* Search: Find if a value exists.
+* Traverse: Visit nodes in order (inorder, preorder, postorder).
+* Delete: Remove a node maintaining BST property.
 
 
- 
+
