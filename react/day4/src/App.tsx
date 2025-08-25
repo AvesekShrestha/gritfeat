@@ -1,14 +1,12 @@
 import Login from "./pages/Login"
 import Home from "./pages/Home"
-import { Routes, Route } from "react-router-dom"
+import { useState } from "react"
 
 export default function App() {
+  const [isloggedIn, setIsLoggedIn] = useState<boolean>(false)
   return (
     <>
-      <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/" element={<Home />} />
-      </Routes>
+      {isloggedIn ? <Home /> : <Login setIsLoggedIn={setIsLoggedIn} />}
     </>
   )
 }

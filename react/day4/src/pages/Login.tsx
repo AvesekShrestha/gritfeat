@@ -3,7 +3,8 @@ import { useForm, Controller } from "react-hook-form"
 import type { SubmitHandler } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import type { Dispatch, SetStateAction } from "react"
+
 
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -12,8 +13,11 @@ import { Label } from "@/components/ui/label"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { ExclamationTriangleIcon } from "@radix-ui/react-icons"
 
-export default function Login() {
-    const navigate = useNavigate()
+interface LoginProps {
+    setIsLoggedIn: Dispatch<SetStateAction<boolean>>
+}
+
+export default function Login({ setIsLoggedIn }: LoginProps) {
     const [loginError, setLoginError] = useState<string | null>(null)
 
     const UserSchema = z.object({
@@ -31,7 +35,7 @@ export default function Login() {
     const onSubmit: SubmitHandler<UserData> = (data) => {
         if (data.username === "admin" && data.password === "admin123") {
             setLoginError(null)
-            navigate("/")
+            setIsLoggedIn(true)
         } else {
             setLoginError("Invalid credentials. Please try again.")
         }
