@@ -5,11 +5,36 @@ A simple **RESTful API** built with **TypeScript + Express** that supports creat
 # Endpoints
 
 - Create a new blog post 
+
+```
+POST /api/v1/blogs
+```
+
 - Get all blog posts
+
+```
+GET /api/v1/blogs
+```
+
 - Get a single blog post by ID
+
+```
+GET /api/v1/blogs/{id}
+````
+
 - Update a blog post by ID
+
+```
+PATCH /api/v1/blogs/{id}
+```
+
 - Delete a blog post by ID
-- In-memory storage (no database, resets on restart)
+
+```
+DELETE /api/v1/blogs/{id}
+```
+
+**Note** : In-memory storage (no database, resets on restart)
 
 # Installation 
 
