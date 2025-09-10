@@ -1,7 +1,6 @@
 import { Request, Response } from "express"
-import productService from "../../application/services/productService"
-import IProductQuery from "../../domain/types/productQuery"
-import { Product } from "../../domain/entities"
+import productService from "../services/productService"
+import IProductQuery from "../types/productQuery"
 
 const productController = {
     async create(req: Request, res: Response) {
@@ -65,17 +64,6 @@ const productController = {
             return res.status(500).json({ message: error.message })
         }
     },
-    async addReview(req: Request, res: Response) {
-        try {
-            const { id } = req.params
-            const payload = req.body
-            const updatedProduct = await productService.addReview(id, payload)
-            return res.status(201).json(updatedProduct)
-        } catch (error: any) {
-            return res.status(500).json({ message: error.message })
-        }
-    }
-
 }
 
 

@@ -1,6 +1,6 @@
-import { IProduct, IReview } from "../../domain/types/product";
-import IProductQuery from "../../domain/types/productQuery";
-import productRepository from "../../infrastrucutre/repositories/productRepository";
+import productRepository from "../repositories/productRepository"
+import { IProduct, IReview } from "../types/product"
+import IProductQuery from "../types/productQuery"
 
 const productService = {
     create(payload: IProduct) {
@@ -43,14 +43,7 @@ const productService = {
             throw error
         }
     },
-    addReview(id: string, payload: IReview) {
-        try {
-            if (!id || !payload) throw new Error("Both id and payload required")
-            return productRepository.addReview(id, payload)
-        } catch (error) {
-            throw error
-        }
-    }
+    
 }
 
 export default productService

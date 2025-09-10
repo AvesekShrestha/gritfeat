@@ -1,6 +1,6 @@
-import userService from "../../application/services/userService";
 import { Request, Response } from "express";
-import ISearchQuery from "../../domain/types/searchQuery";
+import userService from "../services/userService";
+import ISearchQuery from "../types/searchQuery";
 
 const userController = {
     async create(req: Request, res: Response) {

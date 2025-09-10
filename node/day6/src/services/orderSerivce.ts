@@ -1,5 +1,5 @@
-import { IOrder, IOrderItem } from "../../domain/types/order";
-import orderRepository from "../../infrastrucutre/repositories/orderRepository";
+import orderRepository from "../repositories/orderRepository"
+import { IOrder } from "../types/order"
 
 const orderService = {
     create(payload: IOrder) {

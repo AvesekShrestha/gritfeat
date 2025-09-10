@@ -1,9 +1,8 @@
-import { IUserRepository } from "../../domain/interfaces";
-import { User } from "../../domain/entities";
-import ISearchQuery from "../../domain/types/searchQuery";
-import { IUser } from "../../domain/types/user";
+import { User } from "../models"
+import ISearchQuery from "../types/searchQuery"
+import { IUser } from "../types/user"
 
-const userRepository: IUserRepository = {
+const userRepository = {
     async create(payload: IUser) {
         try {
             const user = new User({

@@ -48,6 +48,7 @@ GET /api/v1/user/:id
 
 4. Update user profile
 
+
 ```
 PUT /api/v1/user/:id 
 ```
@@ -79,7 +80,7 @@ GET /api/v1/product/:id
 9. Add a review to a product
 
 ```
-PATCH /api/v1/product/:id/reviews
+PATCH /api/v1/product/:id/review
 ```
 
 10. Delete a review from a product

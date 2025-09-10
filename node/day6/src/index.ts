@@ -1,8 +1,8 @@
 import express from "express"
 import { Request, Response } from "express"
-import port from "./infrastrucutre/config"
-import connectDb from "./infrastrucutre/database/connect"
-import router from "./presentation/routes"
+import port from "./config"
+import connectDb from "./database/connect"
+import router from "./routes"
 
 const app = express()
 

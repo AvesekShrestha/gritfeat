@@ -1,5 +1,5 @@
 import { Request, Response } from "express"
-import orderService from "../../application/services/orderSerivce";
+import orderService from "../services/orderSerivce";
 
 const orderController = {
     async create(req: Request, res: Response) {

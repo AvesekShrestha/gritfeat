@@ -1,6 +1,6 @@
-import ISearchQuery from "../../domain/types/searchQuery";
-import { IUser } from "../../domain/types/user";
-import userRepository from "../../infrastrucutre/repositories/userRepository";
+import userRepository from "../repositories/userRepository"
+import ISearchQuery from "../types/searchQuery"
+import { IUser } from "../types/user"
 
 const userService = {
     create(payload: IUser) {

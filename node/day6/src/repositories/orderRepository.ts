@@ -1,11 +1,9 @@
-import { IOrder } from "../../domain/types/order";
-import { Order, Product, User } from "../../domain/entities";
 import mongoose from "mongoose";
-import { IOrderItem } from "../../domain/types/order";
-import IOrderRespository from "../../domain/interfaces/IorderRepository";
+import { IOrder, IOrderItem } from "../types/order";
+import { Order, Product, User } from "../models";
 
 
-const orderRepository: IOrderRespository = {
+const orderRepository = {
 
     async create(payload: IOrder) {
         const session = await mongoose.startSession();

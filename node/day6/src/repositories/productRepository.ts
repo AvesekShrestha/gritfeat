@@ -1,9 +1,8 @@
-import { IProductRepository } from "../../domain/interfaces";
-import { IProduct, IReview } from "../../domain/types/product";
-import IProductQuery from "../../domain/types/productQuery";
-import { Product } from "../../domain/entities";
+import { Product } from "../models"
+import { IProduct, IReview } from "../types/product"
+import IProductQuery from "../types/productQuery"
 
-const productRepository: IProductRepository = {
+const productRepository = {
     async create(payload: IProduct) {
         try {
             const product = new Product({ ...payload })
@@ -84,19 +83,7 @@ const productRepository: IProductRepository = {
         }
     },
 
-    async addReview(id: string, payload: IReview) {
-        try {
-            const updatedProduct = await Product.findByIdAndUpdate(
-                id,
-                { $push: { reviews: payload } },
-                { new: true }
-            )
-            if (!updatedProduct) throw new Error("No such products exists")
-            return updatedProduct
-        } catch (error) {
-            throw error
-        }
-    }
+    
 }
 
 export default productRepository
