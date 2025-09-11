@@ -11,6 +11,15 @@ const reviewController = {
         } catch (error: any) {
             return res.status(500).json({ message: error.message })
         }
+    },
+    async delete(req: Request, res: Response) {
+        try {
+            const { id, reviewId } = req.params
+            const updatedProduct = await reviewService.delete(id, reviewId)
+            return res.status(201).json(updatedProduct)
+        } catch (error: any) {
+            return res.status(500).json({ message: error.message })
+        }
     }
 
 

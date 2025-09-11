@@ -15,7 +15,24 @@ const reviewRepository = {
         } catch (error) {
             throw error
         }
+    },
+    async delete(id: string, reviewId: string) {
+        try {
+
+            const updatedProduct = await Product.findByIdAndUpdate(
+                id,
+                { $pull: { reviews: { _id: reviewId } } },
+                { new: true }
+            )
+
+            if (!updatedProduct) throw new Error("No such product exists")
+            return updatedProduct
+
+        } catch (error) {
+            throw error
+        }
     }
+
 }
 
 export default reviewRepository

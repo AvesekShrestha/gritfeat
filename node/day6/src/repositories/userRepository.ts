@@ -48,9 +48,12 @@ const userRepository = {
     async update(id: string, payload: Partial<IUser>) {
 
         try {
+
+            const { username, email, ...data } = payload
+
             const updatedUser = await User.findByIdAndUpdate(
                 id,
-                { $set: payload },
+                { $set: data },
                 { new: true }
             )
             if (!updatedUser) throw new Error("No such user exists")

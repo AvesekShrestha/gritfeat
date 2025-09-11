@@ -26,6 +26,12 @@
     * Querying orders associated with specific user
     * Update order status, reverting the stock of product
 
+* **Reports**
+
+    * Query sales revenue report 
+    * Query top selling product
+    * Query Montly sales report
+
 ## API Endpoint
 
 1. Register a user 
@@ -56,7 +62,7 @@ PUT /api/v1/user/:id
 5. Delete user
 
 ```
-DELETE /api/v1/user/
+DELETE /api/v1/user/:id
 ```
 
 6. Add a new product
@@ -80,13 +86,13 @@ GET /api/v1/product/:id
 9. Add a review to a product
 
 ```
-PATCH /api/v1/product/:id/review
+POST /api/v1/product/:id/review
 ```
 
 10. Delete a review from a product
 
 ```
-DELETE /api/v1/product/:id/reviews
+DELETE /api/v1/product/:id/review/:reviewId
 ```
 
 11. Update product details
@@ -98,7 +104,7 @@ PUT /api/v1/product/:id
 12. Delete a product
 
 ```
-DELETE /api/v1/products/:id
+DELETE /api/v1/product/:id
 ```
 
 13. Create a new order
@@ -123,6 +129,24 @@ GET /api/v1/order/:customerId
 
 ```
 PATCH /api/v1/order/:orderId/
+```
+
+17. Query sales revenue report 
+
+```
+GET api/v1/report/revenue
+```
+
+18. Query top selling product 
+
+```
+GET api/v1/report/popular
+```
+
+19. Query montly sales report
+
+```
+GET api/v1/report/monthly
 ```
 
 ## Installation 

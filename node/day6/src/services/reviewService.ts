@@ -10,6 +10,14 @@ const reviewService = {
         } catch (error) {
             throw error
         }
+    },
+    delete(id: string, reviewId : string) {
+        try {
+            if (!id || !reviewId) throw new Error("Both id and payload required")
+            return reviewRepository.delete(id, reviewId)
+        } catch (error) {
+            throw error
+        }
     }
 }
 

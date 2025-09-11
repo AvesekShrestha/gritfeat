@@ -70,7 +70,7 @@ const userController = {
     async delete(req: Request, res: Response) {
         try {
             const { id } = req.params
-            const result = userService.delete(id)
+            const result = await userService.delete(id)
             return res.status(200).json({ message: result })
         } catch (error: any) {
             return res.status(500).json({ message: error.message })
