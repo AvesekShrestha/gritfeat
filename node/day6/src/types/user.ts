@@ -17,16 +17,28 @@ interface ISubscription {
 interface IUser {
     username: string,
     email: string,
-    age: number,
-    country: string,
-    last_login: Date,
-    followers: number,
-    interests: string[],
-    profile: IProfile,
-    device: IDevice[],
+    password: string
+    age?: number,
+    country?: string,
+    last_login?: Date,
+    followers?: number,
+    interests?: string[],
+    profile?: IProfile,
+    device?: IDevice[],
     subscription?: ISubscription
 
 }
 
-export { IProfile, IDevice, ISubscription, IUser }
+interface RegisterPayload {
+    username: string,
+    email: string,
+    password: string
+}
+
+interface LoginPayload {
+    email: string,
+    password: string
+}
+
+export { IProfile, IDevice, ISubscription, IUser, RegisterPayload, LoginPayload }
 

@@ -12,13 +12,13 @@ const UserSchema = new mongoose.Schema<IUser>({
         required: true,
         unique: true
     },
-    age: {
-        type: Number,
-        required: true
-    },
-    country: {
+    password: {
         type: String,
         required: true
+    },
+    age: Number,
+    country: {
+        type: String,
     },
     last_login: Date,
     followers: Number,

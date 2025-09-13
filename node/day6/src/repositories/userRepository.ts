@@ -3,19 +3,7 @@ import ISearchQuery from "../types/searchQuery"
 import { IUser } from "../types/user"
 
 const userRepository = {
-    async create(payload: IUser) {
-        try {
-            const user = new User({
-                ...payload,
-                last_login: new Date(),
-
-            })
-            const newUser = await user.save()
-            return newUser
-        } catch (error) {
-            throw error
-        }
-    },
+    
     async getAll(query: ISearchQuery) {
 
         const page = query.page || 1

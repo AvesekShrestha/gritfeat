@@ -3,17 +3,7 @@ import userService from "../services/userService";
 import ISearchQuery from "../types/searchQuery";
 
 const userController = {
-    async create(req: Request, res: Response) {
-        try {
-            const body = req.body;
-            if (!body) return res.status(400).json({ message: "No body passed" })
-            const user = await userService.create(body)
-            return res.status(200).json(user)
-
-        } catch (error: any) {
-            return res.status(500).json({ message: error.message })
-        }
-    },
+    
     async getAll(req: Request, res: Response) {
         try {
             const {

@@ -2,6 +2,7 @@ import { Router } from "express";
 import productController from "../../../controllers/productController";
 import reviewRouter from "./review"
 
+
 const router = Router()
 
 router.post("/", productController.create)

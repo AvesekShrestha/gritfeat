@@ -3,14 +3,7 @@ import ISearchQuery from "../types/searchQuery"
 import { IUser } from "../types/user"
 
 const userService = {
-    create(payload: IUser) {
-        try {
-            if (!payload) throw new Error("Payload required")
-            return userRepository.create(payload)
-        } catch (error) {
-            throw error
-        }
-    },
+
     getAll(query: ISearchQuery) {
         try {
             return userRepository.getAll(query)

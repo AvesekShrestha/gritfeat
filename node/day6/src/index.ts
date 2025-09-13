@@ -1,19 +1,26 @@
 import express from "express"
 import { Request, Response } from "express"
-import port from "./config"
+import { port } from "./config"
 import connectDb from "./database/connect"
 import router from "./routes"
+import swaggerUi from "swagger-ui-express"
+import swaggerFile from "./swagger-output.json"
+
 
 const app = express()
 
 connectDb()
 app.use(express.json())
+
+app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
+
 app.use("/api", router)
 
 app.get("/health", (req: Request, res: Response) => {
 
     res.status(200).json({ message: "Hello" })
 })
+
 
 
 app.listen(port, () => {
