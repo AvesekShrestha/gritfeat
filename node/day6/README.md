@@ -1,5 +1,69 @@
 # Nodejs API with mongoose 
 
+## Transaction in mongodb
+
+**What is a Transaction?**
+
+A transaction is a sequence of one or more database operations that are executed as a single unit of work.
+
+* Either all operations succeed (commit)
+* Or none of them take effect if something fails (rollback)
+
+**ACID Properties**
+
+ACID properties define reliability and integrity of transactions:
+
+* Atomicity : 
+    The entire transaction is treated as a single unit. all operations succeed or none do.
+
+* Consistency : 
+    A transaction transforms the database from one valid state to another, maintaining all rules (like schema and constraints).
+
+* Isolation : 
+    Transactions are isolated from each other. Concurrent transactions do not interfere.
+
+* Durability :
+    Once a transaction is committed, the changes are permanent, even if the server crashes immediately afterward.
+
+## Transaction in Mongodb
+
+* Introduced in MongoDB 4.0 for multi-document ACID transactions.
+* Require a replica set (not standalone server).
+
+## How Transactions works
+
+1. Start Session
+
+```
+const session = await mongoose.startSession();
+```
+
+2. Start a transaction
+
+```
+session.startTransaction();
+```
+
+3. Perform operations (all operations should include the session)
+
+```
+await Model.findById(id).session(session);
+await Model.updateOne({ _id: id }, { $inc: { balance: -amount } }).session(session);
+```
+
+4. Commit or Abort
+
+```
+await session.commitTransaction(); // save
+await session.abortTransaction();  // rollback if error
+```
+
+5. End the session 
+
+```
+session.endSession();
+```
+
 ## Features 
 
 * **User management** 
@@ -164,9 +228,23 @@ cd node/day6
 npm install
 ```
 
-3. Run the project 
+3. Add .env file
+
+```
+<!-- for linux -->
+touch .env
+
+<!-- add following line -->
+PORT=8000
+
+```
+
+
+4. Run the project 
 
 ```
 npm start
 ```
+
+5. Open in browser for api testing (Swagger API) : http://localhost:8000/docs 
 

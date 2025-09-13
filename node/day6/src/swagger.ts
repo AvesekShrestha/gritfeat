@@ -1,16 +1,23 @@
-import swaggerAutogen from "swagger-autogen";
+import swaggerJsdocs from "swagger-jsdoc"
 
-const doc = {
-    info: {
-        title: "My API",
-        description: "API documentation",
+const options = {
+    definition: {
+        openapi: "3.0.0",
+        info: {
+            title: "Nodejs api docs",
+            version: "1.0.0",
+            description: "API docs generated using jsdocs"
+        },
+        servers: [
+            {
+                url: "http://localhost:8000/api/v1",
+            },
+        ],
     },
-    host: "localhost:8000", 
-    schemes: ["http"],
-};
+    apis: ["./src/controllers/**/*.ts"]
 
-const outputFile = "./swagger-output.json";
-const routes = ["./src/index.ts"]; 
+}
 
-swaggerAutogen()(outputFile, routes, doc);
+const specification = swaggerJsdocs(options)
 
+export default specification

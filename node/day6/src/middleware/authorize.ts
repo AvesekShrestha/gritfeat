@@ -6,13 +6,18 @@ const checkAuthorization = (req: Request, res: Response, next: NextFunction) => 
 
     try {
 
-        const excludedPaths: string[] = [
-            "/v1/auth/login",
-            "/v1/auth/register",
-            "/v1/product"
+        const publicEndpoints: { method: string; path: string }[] = [
+            { method: "POST", path: "/v1/auth/login" },
+            { method: "POST", path: "/v1/auth/register" },
+            { method: "GET", path: "/v1/product" }
         ]
 
-        if (excludedPaths.includes(req.path)) return next();
+        const isPublic = publicEndpoints.some(
+            ep => ep.method === req.method && ep.path === req.path
+        )
+
+        if (isPublic) return next()
+
 
 
         const header = req.headers.authorization

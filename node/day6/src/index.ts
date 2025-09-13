@@ -3,8 +3,9 @@ import { Request, Response } from "express"
 import { port } from "./config"
 import connectDb from "./database/connect"
 import router from "./routes"
+import specification from "./swagger"
 import swaggerUi from "swagger-ui-express"
-import swaggerFile from "./swagger-output.json"
+import checkAuthorization from "./middleware/authorize"
 
 
 const app = express()
@@ -12,9 +13,9 @@ const app = express()
 connectDb()
 app.use(express.json())
 
-app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
-app.use("/api", router)
+app.use("/docs", swaggerUi.serve, swaggerUi.setup(specification))
+app.use("/api", checkAuthorization, router)
 
 app.get("/health", (req: Request, res: Response) => {
 
