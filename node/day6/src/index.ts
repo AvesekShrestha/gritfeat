@@ -23,7 +23,6 @@ app.get("/health", (req: Request, res: Response) => {
 })
 
 
-
 app.listen(port, () => {
     console.log(`Server listining at port : ${port}`)
 })
